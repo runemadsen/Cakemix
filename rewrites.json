@@ -1,0 +1,14 @@
+[{
+  "from": "/users/:key",
+  "to": "/_view/users"
+},
+{
+  "from": "/projects/:key",
+  "to": "/_view/projects"
+},
+{
+  "from": "/projects/:projectskey/users/:userskey",
+  "to": "/_view/projects-users",
+	"query": { "key": [":projectskey", ":userskey"] }
+}
+]
