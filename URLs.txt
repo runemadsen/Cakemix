@@ -26,3 +26,5 @@ GET /changes/project/bar/user/foo
 curl 'http://itp.ic.ht/public/_changes?filter=cakemix/cake&project=cats&feed=continuous'
 
 => http://itpcakemix.com/changes/project/cats/user/rsm347
+=> http://itpcakemix.com/changes/project/cats
+=> http://itpcakemix.com/changes/user/rsm347
