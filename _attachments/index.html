@@ -7,5 +7,14 @@
   <body>
 	Hello, welcome to ITP Cakemix
   </body>
-
+  <script src="/_utils/script/jquery.js"></script>
+  <script type="text/javascript" charset="utf-8">
+    $.ajax({url:"/public/_design/cakemix/_view/projects?group=true",dataType:"json",
+    success : function(data) {
+        console.log(data)
+        data.rows.forEach(function(row) {
+            console.log(row.key, row.value)
+        });
+    }})
+  </script>
 </html>
