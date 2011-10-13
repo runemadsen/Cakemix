@@ -1,0 +1,26 @@
+POST /p/
+  ?user=foo&project=bar&data=whatever
+  -> created_at
+
+view queries
+
+GET /user/foo
+  all records for this user, most recent first
+  
+GET /user/foo?limit=10
+
+GET /project/bar
+
+GET /project/bar/user/foo
+
+
+GET /data/8173tedoisuaht8r
+
+GET /changes/user/foo
+GET /changes/project/bar
+
+  /public/_change?filter=cakemix/users&user=foo
+  
+GET /changes/project/bar/user/foo
+
+curl 'http://itp.ic.ht/public/_changes?filter=cakemix/cake&project=cats&feed=continuous'
