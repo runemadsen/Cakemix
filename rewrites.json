@@ -10,7 +10,7 @@
 {
   "from": "/user/:key",
   "to": "/_view/users",
-	"query" : { "include_docs" : "true" }
+	"query" : { "reduce" : "false", "include_docs" : "true" }
 },
 {
   "from": "/project/:key",

@@ -2,19 +2,53 @@
 <html>
   <head>
     <title>My New CouchApp</title>
-    <link rel="stylesheet" href="style/main.css" type="text/css">
+	 <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.3.0/bootstrap.min.css">
+	 <link rel="stylesheet" href="style/main.css" type="text/css">
   </head>
   <body>
-	Hello, welcome to ITP Cakemix
+	
+	<div class="container">
+
+		<div class="row">
+	   	<div class="span8">
+				
+				<h1>ITP Cakemix</h1>
+
+				<div class="page-header"><h3>Projects</h3></div>
+				<ul id="projects"></ul>
+
+				<div class="page-header"><h3>Users</h3></div>
+				<ul id="users"></ul>
+			</div>
+		</div>
+
+		<div class="row">
+	   	<div class="span8">
+		
+			</div>
+		</div>
+
+		
+	</div>
+	<script src="/_utils/script/jquery.js"></script>
+	  <script type="text/javascript" charset="utf-8">
+
+		$.ajax({url:"/public/_design/cakemix/_view/projects?group=true", dataType:"json",
+	    success : function(data) {
+	        var p = $("#projects");
+	        data.rows.forEach(function(row) {
+	            p.append("<li><a href='/project/"+row.key+"'>"+row.key+"</a> ["+row.value+"]</li>");
+	        });
+	    }});
+
+		$.ajax({url:"/public/_design/cakemix/_view/users?group=true", dataType:"json",
+	    success : function(data) {
+	        var p = $("#users");
+	        data.rows.forEach(function(row) {
+	            p.append("<li><a href='/user/"+row.key+"'>"+row.key+"</a> ["+row.value+"]</li>");
+	        });
+	    }});
+
+	  </script>
   </body>
-  <script src="/_utils/script/jquery.js"></script>
-  <script type="text/javascript" charset="utf-8">
-    $.ajax({url:"/public/_design/cakemix/_view/projects?group=true",dataType:"json",
-    success : function(data) {
-        console.log(data)
-        data.rows.forEach(function(row) {
-            console.log(row.key, row.value)
-        });
-    }})
-  </script>
 </html>
