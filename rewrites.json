@@ -9,17 +9,18 @@
 },
 {
   "from": "/user/:key",
-  "to": "/_view/users"
+  "to": "/_view/users",
+	"query" : { "include_docs" : "true" }
 },
 {
   "from": "/project/:key",
   "to": "/_view/projects",
-	"query" : { "reduce" : "false" }
+	"query" : { "reduce" : "false", "include_docs" : "true" }
 },
 {
   "from": "/project/:projectskey/user/:userskey",
   "to": "/_view/projects-users",
-	"query": { "key": [":projectskey", ":userskey"] }
+	"query": { "key": [":projectskey", ":userskey"], "include_docs" : "true" }
 },
 {
 	"from" : "/changes/project/:project/user/:user",
