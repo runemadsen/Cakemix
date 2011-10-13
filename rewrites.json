@@ -1,14 +1,29 @@
 [{
-  "from": "/users/:key",
+  "from": "/user/:key",
   "to": "/_view/users"
 },
 {
-  "from": "/projects/:key",
+  "from": "/project/:key",
   "to": "/_view/projects"
 },
 {
-  "from": "/projects/:projectskey/users/:userskey",
+  "from": "/project/:projectskey/user/:userskey",
   "to": "/_view/projects-users",
 	"query": { "key": [":projectskey", ":userskey"] }
+},
+{
+	"from" : "/changes/project/:project/user/:user",
+	"to" : "../../_changes",
+	"query" : {"feed" : "continuous", "filter" : "cakemix/cake", "project" : ":project", "user" : ":user"}
+},
+{
+	"from" : "/changes/project/:project",
+	"to" : "../../_changes",
+	"query" : {"feed" : "continuous", "filter" : "cakemix/cake", "project" : ":project"}
+},
+{
+	"from" : "/changes/user/:user",
+	"to" : "../../_changes",
+	"query" : {"feed" : "continuous", "filter" : "cakemix/cake", "user" : ":user"}
 }
 ]
