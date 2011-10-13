@@ -25,5 +25,9 @@
 	"from" : "/changes/user/:user",
 	"to" : "../../_changes",
 	"query" : {"feed" : "continuous", "filter" : "cakemix/cake", "user" : ":user"}
+},
+{
+	"from" : "/p",
+	"to" : "/_update/params"
 }
 ]
