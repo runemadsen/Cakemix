@@ -28,3 +28,6 @@ curl 'http://itp.ic.ht/public/_changes?filter=cakemix/cake&project=cats&feed=con
 => http://itpcakemix.com/changes/project/cats/user/rsm347
 => http://itpcakemix.com/changes/project/cats
 => http://itpcakemix.com/changes/user/rsm347
+
+
+curl 'http://itp.ic.ht/public/_design/cakemix/_spatial/latlon?bbox=0,0,150,150'
