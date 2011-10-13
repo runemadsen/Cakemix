@@ -32,3 +32,5 @@ curl 'http://itp.ic.ht/public/_changes?filter=cakemix/cake&project=cats&feed=con
 
 This is specifying a bounding box of point 1 x,y and point2 x,y
 curl 'http://itp.ic.ht/public/_design/cakemix/_spatial/latlon?bbox=0,0,150,150'
+
+
