@@ -29,7 +29,7 @@ If you want to send data to cakemix from the command line, you would do this:
 
 Name=value pairs are concatenated into a URL by separating them with '&' signs. The resulting list, called a query string, is attached to the end of the URL with a '?'. You must put the resulting URL in single quotes if you are using the command line to send the data.
 
-### Retreiving individual pieces of data
+### Retrieving individual pieces of data
 
 A successful interaction with cakemix will return a 'Success' message, along with a unique ID for that item. For instance, if you ran the curl example above, you would see something like:
 
@@ -43,6 +43,7 @@ This would return the data in a format that looks like this:
 
     {
       "_id":"1ad79d80649a4c474eb667361800075d",
+      "_rev":"1-c8b57517809958931e5897853399a4b5",
       "user":"abc123",
       "project":"Hamster_Counter",
       "hamster_count":"187",
@@ -50,42 +51,22 @@ This would return the data in a format that looks like this:
       "created_at":"2011-09-30T17:02:08.563Z"
     }
 
-Cakemix stores and returns data in a format called JSON. (More on JSON: http://www.json.org.) This is just the JSON version of the data you sent to cakemix -- you can see the values for user, project, hamster_count and need_food in there -- plus two internal variables cakemix is keeping track of: _id is the unique identifier for that bit of data, and created_at is a timestamp.
+Cakemix stores and returns data in a format called JSON. (More on JSON: http://www.json.org.) This is just the JSON version of the data you sent to cakemix -- you can see the values for user, project, hamster_count and need_food in there -- plus three internal variables cakemix is keeping track of: _id is the unique identifier for that bit of data, _rev is the revision of the data, and created_at is a timestamp.
 
 Storing and retrieving a single piece of data, however, isn't so interesting. Where cakemix is designed to be useful is in storing large volumes of periodic information.
 
-RETRIEVING DATA SETS
+### Retrieving data sets
 
 The real value of cakemix is retrieving sets of data, where data added over multiple interactions can be retrieved all at once.
 
-Cakemix supports 4 ways of retrieving multiple bits of data: user, project, data range, and time. These can also interact.
+*Getting all data for a user*
+A GET request to `www.itpcakemix.com/user/abc123/` will return all data that user has ever stored. 
 
-A GET request to db.itp.nyu.edu/user/abc123/ will return all data that user has ever stored. 
+*Getting all data for a project*
+A GET request to `www.itpcakemix.com/project/cats/` will return all data for the project named "cats".
 
-[[Add examples for project, user+project, data range, recent items, and project+data range and project+recent]]
+*Getting all data for a project and a user*
+A GET request to `www.itpcakemix.com/project/cats/user/abc123` will return all data for the project named "cats" that also has the user named "abc123".
 
-WE NEED YOU
-
-We need help with three things:
-
-1. Bang on the service to tell us if it works. Does it break with weird names or values? Does it behave if you hit it every second for an hour? And so on. If it breaks or behaves oddly, please tell us how and why?
-
-2. We need examples for POSTing data to and GETing data from cakemix in (at least) Ruby, Python, Processing, Sinatra, Arduino, and PHP. 
-
-3. We need examples for retrieving and working with the resulting JSON in those same languages. Any code you have that works, however grotty, will be much appreciated.
-
-FINE PRINT
-
-Names are case-insensitive, but values are case-sensitive: foo=bar and FOO=bar are the same, but foo=bar and foo=BAR are not.
-
-All values must be in URL-escaped ASCII -- a name=value pair like 
-
-lyrics=Friday, Friday/Gotta get down on Friday
-
-must be rendered as
-
-lyrics=Friday%2C%20Friday%2FGotta%20get%20down%20on%20Friday
-
-Names and values must both be in ASCII. Names can be up to 256 characters long, values 1024.
-
-You cannot have more than 256 names in a single POST request.
+*Getting all data for a custom name*
+A GET request to `www.itpcakemix.com/key/need_food/value/YES` will return all data that has a name of "need_food" and a value of "YES".
