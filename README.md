@@ -59,14 +59,14 @@ Storing and retrieving a single piece of data, however, isn't so interesting. Wh
 
 The real value of cakemix is retrieving sets of data, where data added over multiple interactions can be retrieved all at once.
 
-*Getting all data for a user*
+**Getting all data for a user**  
 A GET request to `www.itpcakemix.com/user/abc123/` will return all data that user has ever stored. 
 
-*Getting all data for a project*
+**Getting all data for a project**  
 A GET request to `www.itpcakemix.com/project/cats/` will return all data for the project named "cats".
 
-*Getting all data for a project and a user*
+**Getting all data for a project and a user**  
 A GET request to `www.itpcakemix.com/project/cats/user/abc123` will return all data for the project named "cats" that also has the user named "abc123".
 
-*Getting all data for a custom name*
+**Getting all data for a custom name**  
 A GET request to `www.itpcakemix.com/key/need_food/value/YES` will return all data that has a name of "need_food" and a value of "YES".
