@@ -69,4 +69,8 @@ A GET request to `www.itpcakemix.com/project/cats/` will return all data for the
 A GET request to `www.itpcakemix.com/project/cats/user/abc123` will return all data for the project named "cats" that also has the user named "abc123".
 
 **Getting all data for a custom name**  
-A GET request to `www.itpcakemix.com/key/need_food/value/YES` will return all data that has a name of "need_food" and a value of "YES".
+A GET request to `www.itpcakemix.com/key/need_food/value/YES` will return all data that has a name of "need_food" and a value of "YES". Although this is possible, getting data via "user" and "project" is the recommended (and fastest) way to interact with the API. 
+
+### What data is on there anyway?
+
+If you visit www.itpcakemix.com you will see a list of all data with "project" or "user" attached
