@@ -42,6 +42,10 @@
 	"to" : "/_update/params"
 },
 {
+	"from" : "/:itemid",
+	"to" : "../../:itemid"
+},
+{
 	"from" : "public/*",
 	"to" : "../../*"
 }

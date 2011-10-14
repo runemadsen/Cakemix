@@ -33,4 +33,8 @@ curl 'http://itp.ic.ht/public/_changes?filter=cakemix/cake&project=cats&feed=con
 This is specifying a bounding box of point 1 x,y and point2 x,y
 curl 'http://itp.ic.ht/public/_design/cakemix/_spatial/latlon?bbox=0,0,150,150'
 
+How to query megaview:
+?key=["friend", "rune"] // get all documents with a a friend property named rune
+?startkey="friend"&endkey=["friend", {}] // get all documents with a friend property
+
 

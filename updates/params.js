@@ -9,6 +9,6 @@ function(doc, req)
       	doc[field] = form[field];
       }
     }
-    var url = "http://"+req.headers.Host+"/"+req.path[0] + "/" +doc._id;
+    var url = "http://" + req.headers.Host + "/" + doc._id;
     return [doc, "success: "+url+"\n"];
 };
