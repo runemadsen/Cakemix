@@ -1,6 +1,4 @@
-## Cakemix
-
-#### General
+### General
 
 Cakemix is a simple way of storing data from ITP projects online, without needing to create a separate database for each project.
 
@@ -10,7 +8,7 @@ Cakemix lives at http://www.itpcakemix.com, and will accept and store data sent 
 
 Cakemix provides no security -- no logins or credentials are needed to store or retrieve data, so don't store anything sensitive there.
 
-#### Sending Data
+### Sending Data
 
 You send data to www.itpcakemix.com/p (for post), organized as 'name=value' pairs, using the http POST method. 
 
@@ -31,7 +29,7 @@ If you want to send data to cakemix from the command line, you would do this:
 
 Name=value pairs are concatenated into a URL by separating them with '&' signs. The resulting list, called a query string, is attached to the end of the URL with a '?'. You must put the resulting URL in single quotes if you are using the command line to send the data.
 
-#### Retreiving individual pieces of data
+### Retreiving individual pieces of data
 
 A successful interaction with cakemix will return a 'Success' message, along with a unique ID for that item. For instance, if you ran the curl example above, you would see something like:
 
@@ -44,7 +42,7 @@ You can retrieve an individual piece of data (from the command line, in this exa
 This would return the data in a format that looks like this: 
 
     {
-	    "_id":"1ad79d80649a4c474eb667361800075d",
+      "_id":"1ad79d80649a4c474eb667361800075d",
       "user":"abc123",
       "project":"Hamster_Counter",
       "hamster_count":"187",
@@ -52,7 +50,7 @@ This would return the data in a format that looks like this:
       "created_at":"2011-09-30T17:02:08.563Z"
     }
 
-Cakemix stores and returns data in a format called JSON. (More on JSON: http://www.json.org.) This is just the JSON version of the data you sent to cakemix -- you can see the values for user, project, hamster_count and need_food in there -- plus two internal variables cakemix is keeping track of: _id is the unique identifier for that bit of data,  and created_at is a timestamp.
+Cakemix stores and returns data in a format called JSON. (More on JSON: http://www.json.org.) This is just the JSON version of the data you sent to cakemix -- you can see the values for user, project, hamster_count and need_food in there -- plus two internal variables cakemix is keeping track of: _id is the unique identifier for that bit of data, and created_at is a timestamp.
 
 Storing and retrieving a single piece of data, however, isn't so interesting. Where cakemix is designed to be useful is in storing large volumes of periodic information.
 
