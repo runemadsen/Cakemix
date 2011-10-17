@@ -13,9 +13,13 @@
 	"query" : { "reduce" : "false", "include_docs" : "true" }
 },
 {
-  "from": "/project/:key",
+  "from": "/project/:projectname",
   "to": "/_view/projects",
-	"query" : { "reduce" : "false", "include_docs" : "true" }
+	"query" : { 
+	    "reduce" : "false", "include_docs" : "true",
+	    "startkey" : [":projectname", {}], "endkey" : [":projectname"],
+	    "descending" : "true"
+	}
 },
 {
   "from": "/project/:projectskey/user/:userskey",
