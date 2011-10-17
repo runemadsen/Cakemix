@@ -2,6 +2,9 @@
 	"env" : {
 		"default" : {
 			"db" : "http://itpresidents:redburns@itp.ic.ht/public"
+		},
+		"test" : {
+			"db" : "http://itpresidents:redburns@itp.ic.ht/test"
 		}
 	}
 }
