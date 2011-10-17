@@ -1,5 +1,5 @@
 function(doc) {
-  if (doc.project && doc.user) {
-    emit([doc.project, doc.user], null);
+  if (doc.project && doc.user && doc.created_at) {
+    emit([doc.project, doc.user, doc.created_at], null);
   }
 };

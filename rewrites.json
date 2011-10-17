@@ -8,9 +8,13 @@
 	"to" : "style/*"
 },
 {
-  "from": "/user/:key",
+  "from": "/user/:username",
   "to": "/_view/users",
-	"query" : { "reduce" : "false", "include_docs" : "true" }
+	"query" : { 
+	    "reduce" : "false", "include_docs" : "true",
+	    "startkey" : [":username", {}], "endkey" : [":username"],
+	    "descending" : "true"
+	}
 },
 {
   "from": "/project/:projectname",
@@ -22,9 +26,13 @@
 	}
 },
 {
-  "from": "/project/:projectskey/user/:userskey",
+  "from": "/project/:projectname/user/:username",
   "to": "/_view/projects-users",
-	"query": { "key": [":projectskey", ":userskey"], "include_docs" : "true" }
+	"query" : { 
+	    "include_docs" : "true",
+	    "startkey" : [":projectname", ":username", {}], "endkey" : [":projectname", ":username"],
+	    "descending" : "true"
+	}
 },
 {
 	"from" : "/changes/project/:project/user/:user",
