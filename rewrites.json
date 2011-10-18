@@ -50,7 +50,7 @@
 	"query" : {"feed" : "continuous", "filter" : "cakemix/cake", "user" : ":user"}
 },
 {
-	"from" : "/p",
+	"from" : "/add",
 	"to" : "/_update/params"
 },
 {

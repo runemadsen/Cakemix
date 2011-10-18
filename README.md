@@ -10,7 +10,7 @@ Cakemix provides no security -- no logins or credentials are needed to store or 
 
 ### Sending Data
 
-You send data to www.itpcakemix.com/p (for post), organized as 'name=value' pairs, using the http POST method. 
+You send data to www.itpcakemix.com/add, organized as 'name=value' pairs, using the http POST method. 
 
 Cakemix expects two standard names: 'user' and 'project', to identify particular collections of data; the rest of the names can be defined by you, and you can use these names to retrieve later the data you store now.
 
@@ -25,7 +25,7 @@ As an example, imagine you have a project where you want to record two pieces of
 
 If you want to send data to cakemix from the command line, you would do this:
 
-    curl -X POST 'http://www.itpcakemix.com/p?user=abc123&project=Hamster_Counter&hamster_count=187&need_food=YES'
+    curl -X POST 'http://www.itpcakemix.com/add?user=abc123&project=Hamster_Counter&hamster_count=187&need_food=YES'
 
 Name=value pairs are concatenated into a URL by separating them with '&' signs. The resulting list, called a query string, is attached to the end of the URL with a '?'. You must put the resulting URL in single quotes if you are using the command line to send the data.
 
