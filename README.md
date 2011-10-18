@@ -83,4 +83,4 @@ A GET request with a trailing `?limit=number` will limit the returned items to t
 
 ### What data is on there anyway?
 
-If you visit www.itpcakemix.com you will see a list of all data with "project" or "user" attached
+If you visit www.itpcakemix.com you will see a list of all data with "project" or "user" attached [not currently working like it should]
