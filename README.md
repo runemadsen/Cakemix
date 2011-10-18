@@ -78,7 +78,7 @@ All data will be sorted descending by their created date.
 The API has several options you can add to the end of the URL:
 
 **Limiting the number of returned items**
-A GET request with a trailing `?limit=number` will limit the returned items to that specific number. E.g. `www.itpcakemix.com/project/cats/user/abc123?limit=5` will return 5 items
+A GET request with a trailing `?limit=number` will limit the returned items to that specific number. E.g. `www.itpcakemix.com/project/cats/user/abc123?limit=5` will return the 5 newest items
  
 
 ### What data is on there anyway?
