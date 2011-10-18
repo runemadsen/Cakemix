@@ -69,7 +69,17 @@ A GET request to `www.itpcakemix.com/project/cats/` will return all data for the
 A GET request to `www.itpcakemix.com/project/cats/user/abc123` will return all data for the project named "cats" that also has the user named "abc123".
 
 **Getting all data for a custom name**  
-A GET request to `www.itpcakemix.com/key/need_food/value/YES` will return all data that has a name of "need_food" and a value of "YES". Although this is possible, getting data via "user" and "project" is the recommended (and fastest) way to interact with the API. 
+A GET request to `www.itpcakemix.com/key/need_food/value/YES` will return all data that has a name of "need_food" and a value of "YES". Although this is possible, getting data via "user" and "project" is the recommended (and fastest) way to interact with the API.
+
+All data will be sorted descending by their created date.
+
+### Options
+
+The API has several options you can add to the end of the URL:
+
+**Limiting the number of returned items**
+A GET request with a trailing `?limit=number` will limit the returned items to that specific number. E.g. `www.itpcakemix.com/project/cats/user/abc123?limit=5` will return 5 items
+ 
 
 ### What data is on there anyway?
 
