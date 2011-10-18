@@ -54,6 +54,15 @@
 	"to" : "/_update/params"
 },
 {
+  "from": "/:paramkey/:paramvalue",
+  "to": "/_view/params",
+	"query" : { 
+	    "include_docs" : "true",
+	    "startkey" : [":paramkey", ":paramvalue", {}], "endkey" : [":paramkey", ":paramvalue"],
+	    "descending" : "true"
+	}
+},
+{
 	"from" : "/:itemid",
 	"to" : "../../:itemid"
 },

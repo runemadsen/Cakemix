@@ -36,5 +36,6 @@ curl 'http://itp.ic.ht/public/_design/cakemix/_spatial/latlon?bbox=0,0,150,150'
 How to query megaview:
 ?key=["friend", "rune"] // get all documents with a a friend property named rune
 ?startkey="friend"&endkey=["friend", {}] // get all documents with a friend property
+http://itp.ic.ht/public/_design/cakemix/_view/params?startkey=[%22project%22,%20%22cats%22,%20{}]&endkey=[%22project%22,%20%22cats%22]&include_docs=true&descending=true
 
 
