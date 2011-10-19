@@ -104,7 +104,7 @@ Give us code. We need examples for using Cakemix in Processing, Arduino, PHP, Ru
 
 Tell us what features you would like in the next iteration?
 
-Tell us how to imporve the documentation. This is meant to be easy to use, which means being easy to understand, which means good documentation. What will improve that?
+Tell us how to imporve the documentation. This is meant to be easy to use, which means being easy to understand, which means good documentation. What will improve that? If you're a Github user please fork this repository, edit the README documentation, and send a pull request. 
 
 ### The Name
 
