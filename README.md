@@ -106,4 +106,12 @@ Tell us what features you would like in the next iteration?
 
 Tell us how to imporve the documentation. This is meant to be easy to use, which means being easy to understand, which means good documentation. What will improve that?
 
+### The Name
+
+"Cakemix" refers to something where the ingredients have been put together in advance of your needing them. 
+
+It also refers to the mid-20th century American song "If I Knew You Were Comin' I'd've Baked a Cake" -- Cakemix is designed to receive data from any user or project without needing to know in advance that data would be showing up.
+
+Thanks to Rune, the cake is not a lie.
+
 
