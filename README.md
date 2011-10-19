@@ -1,12 +1,14 @@
 ### Introduction
 
-Cakemix is a simple way of storing data from ITP projects online, without needing to create a separate database for each project.
+Cakemix is a simple way of storing data from ITP projects online, without needing to create a separate database for each project. It was written by Rune Madsen using CouchDB, with input from Chris Anderson, creator of CouchDB, and from Clay Shirky and Greg Borenstein. (More about CouchDB at http://couchDB.org)
 
 Cakemix is designed so that simple projects -- web forms, networked sensors, Processing sketches, whatever -- can easily write data to the web to be retrieved later.
 
 Cakemix lives at http://www.itpcakemix.com. It will accept and store data sent to it, and will return any data it has stored previously. Those are the only two operations: send data to cakemix; get data from cakemix.
 
 Cakemix provides no security -- no logins or credentials are needed to store or retrieve data, so don't store anything sensitive there.
+
+This is alpha software; if you would like to help, see What We Need, at the end of this document.
 
 ### Sending Data
 
@@ -65,30 +67,43 @@ Storing and retrieving a single piece of data, however, isn't so interesting. Wh
 
 ### Retrieving data sets
 
-The real value of cakemix is retrieving sets of data, where data added over multiple interactions can be retrieved all at once.
+The real value of cakemix is retrieving sets of data, where data added over multiple interactions can be retrieved all at once. Multiple documents can be retreived using an http GET request on URLs composed to pring back particular collections of documents.
 
 **Getting all data for a user**  
-A GET request to `www.itpcakemix.com/user/abc123/` will return all data that user has ever stored. 
+A GET request to `www.itpcakemix.com/user/abc123/` will return all data stored under that user ID, whatever the project. 
 
 **Getting all data for a project**  
-A GET request to `www.itpcakemix.com/project/cats/` will return all data for the project named "cats".
+A GET request to `www.itpcakemix.com/project/cats/` will return all data stored under the project named "cats".
 
 **Getting all data for a project and a user**  
-A GET request to `www.itpcakemix.com/project/cats/user/abc123` will return all data for the project named "cats" that also has the user named "abc123".
+A GET request to `www.itpcakemix.com/project/cats/user/abc123` will return only the data for the project named "cats" that also bears the user ID "abc123". 
 
 **Getting all data for a custom name**  
-A GET request to `www.itpcakemix.com/need_food/YES` will return all data that has a name of "need_food" and a value of "YES". Although this is possible, getting data via "user" and "project" is the recommended (and fastest) way to interact with the API.
-
-All data will be sorted descending by their created date.
+A GET request to `www.itpcakemix.com/need_food/YES` will return all data that has a name of "need_food" and a value of "YES". This feature allows you to filter on custom fields. IT WILL BE SLOWER than retreiving data using just project and user fields, at least on large collections. 
 
 ### Options
 
-The API has several options you can add to the end of the URL:
+By default, returned data will be sorted in reverse chronological order (which is to say, descending by their created date), so that the first document returned is the most recent.
+
+In addition to this default, Cakemix will let you limit the total number of documents returned, using a query string appended to the URL specifying the collection you want to receive. 
 
 **Limiting the number of returned items**
 A GET request with a trailing `?limit=number` will limit the returned items to that specific number. E.g. `www.itpcakemix.com/project/cats/user/abc123?limit=5` will return the 5 newest items
  
+We plan to add other options to Cakemix, but for now, limit is the only such option.
 
-### What data is on there anyway?
+### What We Need 
 
-If you visit www.itpcakemix.com you will see a list of all data with "project" or "user" attached [not currently working like it should]
+Comments, questions and observations to rune@runemadsen.com and/or clay@shirky.com
+
+Bang on this. Where does it break? What bad surprises does it create?
+
+Show us examples. Did you try this? Was it useful? How? Not useful? Why not?
+
+Give us code. We need examples for using Cakemix in Processing, Arduino, PHP, Ruby (Sinatra), Python, etc.
+
+Tell us what features you would like in the next iteration?
+
+Tell us how to imporve the documentation. This is meant to be easy to use, which means being easy to understand, which means good documentation. What will improve that?
+
+
