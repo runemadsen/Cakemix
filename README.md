@@ -1,6 +1,6 @@
 ### Introduction
 
-Cakemix is a simple way of storing data from ITP projects online, without needing to create a separate database for each project. It was written by Rune Madsen using CouchDB, with input from Chris Anderson, creator of CouchDB, and from Clay Shirky and Greg Borenstein. (More about CouchDB at http://couchDB.org)
+Cakemix is a simple way of storing data from ITP projects online, without needing to create a separate database for each project. It was written by Rune Madsen using CouchDB(.org), with input from Chris Anderson, creator of CouchDB, and from Clay Shirky and Greg Borenstein. 
 
 Cakemix is designed so that simple projects -- web forms, networked sensors, Processing sketches, whatever -- can easily write data to the web to be retrieved later.
 
@@ -113,5 +113,3 @@ Tell us how to imporve the documentation. This is meant to be easy to use, which
 It also refers to the mid-20th century American song "If I Knew You Were Comin' I'd've Baked a Cake" -- Cakemix is designed to receive data from any user or project without needing to know in advance that data would be showing up.
 
 Thanks to Rune, the cake is not a lie.
-
-
