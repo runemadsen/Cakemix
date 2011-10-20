@@ -113,3 +113,18 @@ Tell us how to imporve the documentation. This is meant to be easy to use, which
 It also refers to the mid-20th century American song "If I Knew You Were Comin' I'd've Baked a Cake" -- Cakemix is designed to receive data from any user or project without needing to know in advance that data would be showing up.
 
 Thanks to Rune, the cake is not a lie.
+
+### Using Cakemix with Javascript
+
+If you want to load data from Cakemix via Javasscript (jQuery), then you need to use a so-called JSONP AJAX call. Because your javascript code is on one server and the Cakemix API is on another server, any browser will block the AJAX call unless you use JSONP. This is an example on how you would do a call to the api with jQuery:
+
+    <script type="text/javascript" charset="utf-8">
+			$.ajax({
+			  type: "GET",
+			  url: "http://www.itpcakemix.com/project/cats",
+			  dataType: "jsonp",
+			  success : function(data) {
+				console.log(data);
+			  }
+			});
+		</script>
