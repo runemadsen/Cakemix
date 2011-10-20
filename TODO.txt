@@ -1,0 +1,3 @@
+* Add http header of 'Content-Type: text/plain' to return values
+
+* Add query-string option to GET retrievals of the form 'Return-Page=http://some.url.com/thanks.html', so people can use this as a replacement for web forms
