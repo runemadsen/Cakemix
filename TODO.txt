@@ -6,6 +6,12 @@
 
 * Add query-string option to GET retrievals of the form 'Return-Page=<URL>', so people can use Cakemix as a replacement for web forms. The value of Return-Page should be sent as a 302 Re-direct status code.
 
-* Add /n separation of JSON fields
+* Add /n separation of JSON fields by default.
 
-* Add 'format' parameter -- JSON, CSV, XML(?), URL-encoded(?), etc
+* Add 'format' parameter -- JSON, CSV, YAML, XML(?), URL-encoded(?), etc
+
+* Add "user=public" if a POST comes in with no user ID
+
+* Add "project=data" if a POST comes in with no project ID
+
+* Question: if I GET something like itpcakemix.com/key/update/, do I get all data from any documents that have a key named 'update', or do I only get the 'update' keys that don't have an associated project? (I think it should be the latter.)
