@@ -121,10 +121,10 @@ If you want to get data from Cakemix via Javasscript, using jQuery, then you nee
 Here is an example on how you would do a call to the Cakemix API with jQuery:
 
     $.ajax({
-	    type: "GET",
+      type: "GET",
       url: "http://www.itpcakemix.com/project/cats",
       dataType: "jsonp",
       success : function(data) {
-				alert(data);
+        alert(data);
      }
     });
