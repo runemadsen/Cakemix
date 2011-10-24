@@ -49,7 +49,7 @@ You can retrieve an individual piece of data (from the command line, in this exa
 
     curl http://www.itpcakemix.com/900762271dd7820c9e69132276000e5f
 
-This would return the data in a format that looks like this: 
+This would return the data in a format that looks like this (carriage returns added for legibility): 
 
     {
       "_id":"1ad79d80649a4c474eb667361800075d",
@@ -114,9 +114,11 @@ It also refers to the mid-20th century American song "If I Knew You Were Comin' 
 
 Thanks to Rune, the cake is not a lie.
 
-### Using Cakemix with Javascript
+### Code Samples: Javascript/jQuery/JSONP
 
-If you want to load data from Cakemix via Javasscript (jQuery), then you need to use a so-called JSONP AJAX call. Because your javascript code is on one server and the Cakemix API is on another server, any browser will block the AJAX call unless you use JSONP. This is an example on how you would do a call to the api with jQuery:
+If you want to get data from Cakemix via Javasscript, using jQuery, then you need to use JSONP (JSON with Padding;  `http://en.wikipedia.org/wiki/JSONP`). Because your javascript is on one server and the Cakemix API is on another, browsers will block the request for data sent to Cakemix unless you use JSONP, which allows server-to-server communication via the <script> tag. 
+
+Here is an example on how you would do a call to the Cakemix API with jQuery:
 
     $.ajax({
 	    type: "GET",
