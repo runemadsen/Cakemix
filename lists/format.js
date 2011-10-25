@@ -8,7 +8,7 @@ function(head, req) {
         , first = true
         ;
     if (format == "raw") {
-        send('{"rows":[');
+        send('{"rows":[\n');
         while (row = getRow()) {
             sendJSON(row, first);
             first = false;
