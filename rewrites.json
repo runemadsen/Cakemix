@@ -18,7 +18,7 @@
 },
 {
   "from": "/project/:projectname",
-  "to": "/_view/projects",
+  "to": "/_list/format/projects",
 	"query" : { 
 	    "reduce" : "false", "include_docs" : "true",
 	    "startkey" : [":projectname", {}], "endkey" : [":projectname"],
