@@ -49,11 +49,10 @@ You can retrieve an individual piece of data (from the command line, in this exa
 
     curl http://www.itpcakemix.com/900762271dd7820c9e69132276000e5f
 
-This would return the data in a format that looks like this (carriage returns added for legibility): 
+This would return the data in a format that looks like this: 
 
     {
       "_id":"1ad79d80649a4c474eb667361800075d",
-      "_rev":"1-c8b57517809958931e5897853399a4b5",
       "user":"abc123",
       "project":"Hamster_Counter",
       "hamster_count":"187",
@@ -61,7 +60,7 @@ This would return the data in a format that looks like this (carriage returns ad
       "created_at":"2011-09-30T17:02:08.563Z"
     }
 
-Cakemix stores and returns data in a format called JSON. (More on JSON: http://www.json.org.) This is just the JSON version of the data you sent to cakemix -- you can see the values for user, project, hamster_count and need_food in there -- plus three internal variables cakemix is keeping track of: _id is the unique identifier for that bit of data, _rev is the revision of the data, and created_at is a timestamp. (Please ignore _rev; it is an unalterable internal field in CouchDB, Cakemix's underlying database. We intend to remove it from future versions.)
+Cakemix stores and returns data in a format called JSON. (More on JSON: http://www.json.org.) This is just the JSON version of the data you sent to cakemix -- you can see the values for user, project, hamster_count and need_food in there -- plus three internal variables cakemix is keeping track of: _id is the unique identifier for that bit of data, and created_at is a timestamp. 
 
 Storing and retrieving a single piece of data, however, isn't so interesting. Where cakemix is designed to be useful is in storing large volumes of periodic information.
 
