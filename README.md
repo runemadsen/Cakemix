@@ -115,7 +115,7 @@ Thanks to Rune, the cake is not a lie.
 
 ### Code Samples: Javascript/jQuery/JSONP
 
-If you want to get data from Cakemix via Javasscript, using jQuery, then you need to use JSONP (JSON with Padding;  `http://en.wikipedia.org/wiki/JSONP`). Because your javascript is on one server and the Cakemix API is on another, browsers will block the request for data sent to Cakemix unless you use JSONP, which allows server-to-server communication via the <script> tag. 
+If you want to get data from Cakemix via Javasscript, using jQuery, then you need to use JSONP (JSON with Padding;  `http://en.wikipedia.org/wiki/JSONP`). Because your javascript is on one server and the Cakemix API is on another, browsers will block the request for data sent to Cakemix unless you use JSONP, which allows server-to-server communication via the &#60;script&#60; tag. 
 
 Here is an example on how you would do a call to the Cakemix API with jQuery:
 

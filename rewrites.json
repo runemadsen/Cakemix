@@ -9,7 +9,7 @@
 },
 {
   "from": "/user/:username",
-  "to": "/_view/users",
+  "to": "/_list/format/users",
 	"query" : { 
 	    "reduce" : "false", "include_docs" : "true",
 	    "startkey" : [":username", {}], "endkey" : [":username"],
@@ -27,7 +27,7 @@
 },
 {
   "from": "/project/:projectname/user/:username",
-  "to": "/_view/projects-users",
+  "to": "/_list/format/projects-users",
 	"query" : { 
 	    "include_docs" : "true",
 	    "startkey" : [":projectname", ":username", {}], "endkey" : [":projectname", ":username"],
@@ -55,7 +55,7 @@
 },
 {
   "from": "/:paramkey/:paramvalue",
-  "to": "/_view/params",
+  "to": "/_list/format/params",
 	"query" : { 
 	    "include_docs" : "true",
 	    "startkey" : [":paramkey", ":paramvalue", {}], "endkey" : [":paramkey", ":paramvalue"],
