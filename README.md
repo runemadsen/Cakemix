@@ -80,6 +80,13 @@ A GET request to `www.itpcakemix.com/project/cats/user/abc123` will return only 
 **Getting all data for a custom name**  
 A GET request to `www.itpcakemix.com/need_food/YES` will return all data that has a name of "need_food" and a value of "YES". This feature allows you to filter on custom fields. IT WILL BE SLOWER than retreiving data using just project and user fields, at least on large collections. 
 
+### Formats
+
+The default return format of Cakemix is JSON (javascript object notation), which can prove a little difficult to parse on small devices like the Arduino. Add a `?format=formatname` at the end of your query to change the format:
+
+`?format=csv` will return the data in csv format
+`?format=icm` will return the data in csv format, but without the id property
+
 ### Options
 
 By default, returned data will be sorted in reverse chronological order (which is to say, descending by their created date), so that the first document returned is the most recent.
