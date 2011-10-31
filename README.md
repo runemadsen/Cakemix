@@ -85,6 +85,7 @@ A GET request to `www.itpcakemix.com/need_food/YES` will return all data that ha
 The default return format of Cakemix is JSON (javascript object notation), which can prove a little difficult to parse on small devices like the Arduino. Add a `?format=formatname` at the end of your query to change the format:
 
 `?format=csv` will return the data in csv format
+
 `?format=icm` will return the data in csv format, but without the id property
 
 ### Options
